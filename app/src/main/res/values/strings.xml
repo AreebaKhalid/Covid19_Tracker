@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">COVID-19 Tracker</string>
+    <string name="totalCases">Total Cases: </string>
+    <string name="totalDeaths">Total Deaths: </string>
+    <string name="totalRecovered">Total Recovered: </string>
+    <string name="notSet">0</string>
+</resources>

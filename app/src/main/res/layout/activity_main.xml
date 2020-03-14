@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/totalDeaths"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/totalDeaths"
+        app:layout_constraintRight_toLeftOf="@+id/deathTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:id="@+id/deathTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/notSet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="10dp"
+        />
+
+
+    <TextView
+        android:id="@+id/totalCases"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/totalCases"
+        app:layout_constraintRight_toLeftOf="@+id/casesTextView"
+        app:layout_constraintBottom_toTopOf="@+id/deathTextView"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:id="@+id/casesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/notSet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/deathTextView"
+        android:layout_margin="10dp"
+        />
+
+
+    <TextView
+        android:id="@+id/totalRecovered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/totalRecovered"
+        app:layout_constraintRight_toLeftOf="@+id/recoveredTextView"
+        app:layout_constraintTop_toBottomOf="@+id/deathTextView"
+        android:layout_margin="10dp"
+        />
+
+    <TextView
+        android:id="@+id/recoveredTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/notSet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deathTextView"
+        android:layout_margin="10dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
