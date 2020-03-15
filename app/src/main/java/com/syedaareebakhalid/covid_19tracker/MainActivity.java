@@ -1,10 +1,15 @@
 package com.syedaareebakhalid.covid_19tracker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.syedaareebakhalid.covid_19tracker.Models.Template;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -12,7 +17,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MainActivity extends AppCompatActivity implements Callback<Template> {
+public class MainActivity extends AppCompatActivity implements Callback<Template>, View.OnClickListener {
     private static final String TAG = MainActivity.class.getSimpleName();
 
     public static final String BASE_URL = "https://corona.lmao.ninja/";
@@ -25,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements Callback<Template
     private TextView casesTextView;
     private TextView deathTextView;
 
+    private Button btnNextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +47,10 @@ public class MainActivity extends AppCompatActivity implements Callback<Template
         ApiService apiService = retrofit.create(ApiService.class);
         Call<Template> call = apiService.getData("all");
         call.enqueue(this);
+
+        btnNextView = (Button) findViewById(R.id.btnNextView);
+        btnNextView.setOnClickListener(this);
+
     }
 
     @Override
@@ -66,5 +76,11 @@ public class MainActivity extends AppCompatActivity implements Callback<Template
     @Override
     public void onFailure(Call<Template> call, Throwable t) {
         Log.e(TAG, t.toString());
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent nextView = new Intent(getApplicationContext(),ListByCountry.class);
+        startActivity(nextView);
     }
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/countryTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Country"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:textSize="35dp"
+        />
+
+    <TextView
+        android:id="@+id/staticTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/totalCases"
+        android:layout_toLeftOf="@+id/totalCasesTextView"
+        android:layout_marginTop="25dp"
+        android:padding="5dp"
+        android:textSize="20dp"
+        />
+    <TextView
+        android:id="@+id/totalCasesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:layout_marginTop="25dp"
+        android:padding="5dp"
+        android:textSize="20dp"
+        android:layout_alignParentRight="true"
+        />
+</RelativeLayout>

@@ -73,4 +73,15 @@
         android:layout_margin="10dp"
         />
 
+    <Button
+        android:id="@+id/btnNextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnToSecondScreen"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deathTextView"
+        android:layout_margin="50dp"
+    />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

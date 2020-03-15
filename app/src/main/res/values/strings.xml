@@ -4,4 +4,7 @@
     <string name="totalDeaths">Total Deaths: </string>
     <string name="totalRecovered">Total Recovered: </string>
     <string name="notSet">0</string>
+    <string name="btnToSecondScreen">View By Country</string>
+    <string name="emptyText">No Countries Added</string>
+    <string name="add_country">Add Country</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.syedaareebakhalid.covid_19tracker;
+package com.syedaareebakhalid.covid_19tracker.Models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
