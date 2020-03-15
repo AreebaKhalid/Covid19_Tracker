@@ -3,7 +3,9 @@ package com.syedaareebakhalid.covid_19tracker.Models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class CountryViewTemplate {
+import java.io.Serializable;
+@SuppressWarnings("serial")
+public class CountryViewTemplate implements Serializable {
     @SerializedName("country")
     @Expose
     private String country;
