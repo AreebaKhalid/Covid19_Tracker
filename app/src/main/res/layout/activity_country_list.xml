@@ -6,15 +6,16 @@
     tools:context=".ListByCountry">
 
     <ListView
+        android:visibility="visible"
         android:id="@+id/countryListView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:dividerHeight="1dp"
         android:padding="10dp">
     </ListView>
 
     <TextView
-        android:id="@+id/emptyTextView"
+        android:id="@+id/empty"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/emptyText"

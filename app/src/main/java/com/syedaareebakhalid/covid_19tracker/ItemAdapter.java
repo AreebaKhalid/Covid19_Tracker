@@ -11,7 +11,7 @@ import com.syedaareebakhalid.covid_19tracker.Models.CountryViewTemplate;
 
 import java.util.List;
 
-public class ItemAdapter extends BaseAdapter {
+public class ItemAdapter extends BaseAdapter{
 
     LayoutInflater inflater;
 
@@ -45,7 +45,7 @@ public class ItemAdapter extends BaseAdapter {
         TextView totalCasesTextView = (TextView) v.findViewById(R.id.totalCasesTextView);
 
         countryTextView.setText(countries.get(position).getCountry());
-        totalCasesTextView.setText(countries.get(position).getTodayCases());
+        totalCasesTextView.setText(countries.get(position).getCases().toString());
 
         return v;
     }

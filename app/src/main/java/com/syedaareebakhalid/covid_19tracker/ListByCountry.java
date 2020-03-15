@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.PopupMenu;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -32,10 +31,11 @@ public class ListByCountry extends AppCompatActivity implements Callback<List<Co
     private static List<CountryViewTemplate> listCountries =  new ArrayList<CountryViewTemplate>();
     private static List<CountryViewTemplate> addedCountries =  new ArrayList<CountryViewTemplate>();
 
+    ItemAdapter adapter ;
+
     private static Retrofit retrofit = null;
 
     private PopupMenu popup;
-    private TextView emptyTextView;
     private ListView countryListView;
 
     @Override
@@ -43,17 +43,13 @@ public class ListByCountry extends AppCompatActivity implements Callback<List<Co
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_country_list);
 
-        emptyTextView = (TextView) findViewById(R.id.emptyTextView);
         countryListView = (ListView) findViewById(R.id.countryListView);
+        countryListView.setEmptyView(findViewById(R.id.empty));
         connectToApi();
 
-        if(!addedCountries.isEmpty()){
-            ItemAdapter adapter = new ItemAdapter(this, addedCountries);
-            adapter.notifyDataSetChanged();
-            countryListView.setAdapter(adapter);
-            emptyTextView.setText("");
-        }
-
+         adapter = new ItemAdapter(this, addedCountries);
+         adapter.notifyDataSetChanged();
+         countryListView.setAdapter(adapter);
 
     }
 
@@ -70,6 +66,7 @@ public class ListByCountry extends AppCompatActivity implements Callback<List<Co
             popup.setOnMenuItemClickListener(menuItem -> {
                 String country = menuItem.getTitle().toString();
                 addCountryToList(country);
+                adapter.notifyDataSetChanged();
                 return false;
             });
         }
