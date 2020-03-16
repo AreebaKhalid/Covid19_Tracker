@@ -115,8 +115,6 @@ public class ListByCountry extends AppCompatActivity implements Callback<List<Co
     }
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void addCountryToList(String country){
-
-
         listCountries.forEach(item ->{
             if(item.getCountry() == country){
                 addedCountries.add(item);
