@@ -4,18 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/background">
 
     <TextView
         android:id="@+id/totalDeaths"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/totalDeaths"
-        app:layout_constraintRight_toLeftOf="@+id/deathTextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="10dp"
-        />
+        android:layout_marginRight="52dp"
+        android:text="@string/totalDeaths"
+        android:textColor="@color/whiteColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/deathTextView"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/deathTextView"
@@ -26,6 +28,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/whiteColor"
         android:layout_margin="10dp"
         />
 
@@ -34,11 +37,13 @@
         android:id="@+id/totalCases"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/totalCases"
-        app:layout_constraintRight_toLeftOf="@+id/casesTextView"
-        app:layout_constraintBottom_toTopOf="@+id/deathTextView"
         android:layout_margin="10dp"
-        />
+        android:layout_marginRight="44dp"
+        android:textColor="@color/whiteColor"
+        android:layout_marginBottom="8dp"
+        android:text="@string/totalCases"
+        app:layout_constraintBottom_toTopOf="@+id/deathTextView"
+        app:layout_constraintRight_toLeftOf="@+id/casesTextView" />
 
     <TextView
         android:id="@+id/casesTextView"
@@ -46,6 +51,7 @@
         android:layout_height="wrap_content"
         android:text="@string/notSet"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/whiteColor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/deathTextView"
         android:layout_margin="10dp"
@@ -57,6 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/totalRecovered"
+        android:textColor="@color/whiteColor"
         app:layout_constraintRight_toLeftOf="@+id/recoveredTextView"
         app:layout_constraintTop_toBottomOf="@+id/deathTextView"
         android:layout_margin="10dp"
@@ -67,6 +74,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/notSet"
+        android:textColor="@color/whiteColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/deathTextView"
@@ -78,6 +86,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btnToSecondScreen"
+        android:background="@drawable/button_desing"
+        android:textColor="@color/whiteColor"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/deathTextView"
