@@ -1,10 +1,13 @@
 package com.syedaareebakhalid.covid_19tracker;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 
@@ -23,7 +26,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ListByCountry extends AppCompatActivity implements Callback<List<CountryViewTemplate>> {
+public class ListByCountry extends AppCompatActivity implements Callback<List<CountryViewTemplate>>, AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
 
     private static final String TAG = ListByCountry.class.getSimpleName();
 
@@ -50,6 +53,9 @@ public class ListByCountry extends AppCompatActivity implements Callback<List<Co
          adapter = new ItemAdapter(this, addedCountries);
          adapter.notifyDataSetChanged();
          countryListView.setAdapter(adapter);
+
+         countryListView.setOnItemClickListener(this);
+         countryListView.setOnItemLongClickListener(this);
 
     }
 
@@ -116,5 +122,19 @@ public class ListByCountry extends AppCompatActivity implements Callback<List<Co
                 addedCountries.add(item);
             }
         });
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent nextIntent = new Intent(getApplicationContext(),View_detail.class);
+        nextIntent.putExtra("com.syedaareebakhalid.covid_19tracker.TEMPLATE",addedCountries.get(position));
+        startActivity(nextIntent);
+    }
+
+    @Override
+    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+        addedCountries.remove(addedCountries.get(position));
+        adapter.notifyDataSetChanged();
+        return true;
     }
 }
