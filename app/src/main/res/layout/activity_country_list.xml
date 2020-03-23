@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context=".ListByCountry"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    tools:context=".ListByCountry">
 
     <ListView
         android:visibility="visible"
@@ -23,5 +23,32 @@
         android:text="@string/emptyText"
         android:textSize="25dp"
         android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/dateTimeTextView"
+        android:text="              "
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:textSize="15dp"
+        android:textColor="@color/graycolor"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:paddingBottom="10dp"
+        android:text="Updated on : "
+        android:textColor="@color/graycolor"
+        android:textSize="15dp"
+        android:layout_toLeftOf="@+id/dateTimeTextView"
+        android:layout_alignParentBottom="true"
+
+        />
 
 </RelativeLayout>
