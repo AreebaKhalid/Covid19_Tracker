@@ -11,10 +11,10 @@ import retrofit2.http.Path;
 
 public interface ApiService {
 
-    @GET("/{type}")
-    Call<Template> getData(@Path("type") String type);
+    @GET("{fullUrl}")
+    Call<Template> getData(@Path("fullUrl") String fullUrl);
 
-    @GET("/{type}")
-    Call<List<CountryViewTemplate>> getCountriesData(@Path("type") String type);
+    @GET("{fullUrl}")
+    Call<List<CountryViewTemplate>> getCountriesData(@Path("fullUrl") String fullUrl);
 
 }

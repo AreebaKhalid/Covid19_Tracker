@@ -7,6 +7,14 @@
     android:background="@drawable/background"
     tools:context=".View_detail">
 
+    <ImageView
+        android:id="@+id/flagImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/countryHeadTextView"
+        android:layout_centerHorizontal="true"
+        />
+
     <TextView
         android:id="@+id/countryHeadTextView"
         android:layout_width="wrap_content"

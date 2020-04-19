@@ -27,7 +27,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class MainActivity extends AppCompatActivity implements Callback<Template>, View.OnClickListener {
     private static final String TAG = MainActivity.class.getSimpleName();
 
-    public static final String BASE_URL = "https://corona.lmao.ninja/";
+    public static String BASE_URL = null;
     public static final String prefName = "pref1";
     public static final String recoveredCount = "recoveredCount";
     public static final String casesCount = "casesCount";
@@ -51,11 +51,20 @@ public class MainActivity extends AppCompatActivity implements Callback<Template
 
     private Button btnNextView;
 
+    static{
+        try {
+            BASE_URL = new BackgroundTask().execute("https://raw.githubusercontent.com/AreebaKhalid/Covid19_Tracker/master/Api_URL").get().toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(BASE_URL);
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         deathTextView = (TextView) findViewById(R.id.deathTextView);
         casesTextView = (TextView) findViewById(R.id.casesTextView);

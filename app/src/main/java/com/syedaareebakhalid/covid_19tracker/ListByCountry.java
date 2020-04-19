@@ -124,6 +124,7 @@ public class ListByCountry extends AppCompatActivity implements Callback<List<Co
     @Override
     public void onResponse(Call<List<CountryViewTemplate>> call, Response<List<CountryViewTemplate>> response) {
         listCountries = response.body();
+        System.out.println(listCountries.get(0).getCountryInfo().getFlag());
         @SuppressLint({"NewApi", "LocalSuppress"}) DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         @SuppressLint({"NewApi", "LocalSuppress"}) LocalDateTime now = LocalDateTime.now();
         date = dtf.format(now);
@@ -243,11 +244,15 @@ public class ListByCountry extends AppCompatActivity implements Callback<List<Co
             int i=0;
             Pattern p = Pattern.compile("country");
             Matcher m = p.matcher(addedCountriesJson);
+
+            System.out.println(p);
+            System.out.println(m);
+
             while (m.find()) {
                 i++;
             }
 
-            if(i==1){
+            if(i==2){
 
                 Type type = new TypeToken<CountryViewTemplate>(){}.getType();
                 addedCountriesFromPref.add(gson.fromJson(addedCountriesJson,type));

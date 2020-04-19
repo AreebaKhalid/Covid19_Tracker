@@ -6,6 +6,10 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 @SuppressWarnings("serial")
 public class CountryViewTemplate implements Serializable {
+    @SerializedName("countryInfo")
+    @Expose
+    private CountryInfo countryInfo;
+
     @SerializedName("country")
     @Expose
     private String country;
@@ -82,5 +86,13 @@ public class CountryViewTemplate implements Serializable {
 
     public void setCritical(Integer critical) {
         this.critical = critical;
+    }
+
+    public CountryInfo getCountryInfo() {
+        return countryInfo;
+    }
+
+    public void setCountryInfo(CountryInfo countryInfo) {
+        this.countryInfo = countryInfo;
     }
 }
